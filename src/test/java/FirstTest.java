@@ -27,7 +27,7 @@ public class FirstTest {
         cap.setCapability("automationName", "Appium");
         cap.setCapability("appPackage", "org.wikipedia");
         cap.setCapability("appActivity", ".main.MainActivity");
-        cap.setCapability("app", "/Users/user1/Tests/JavaAppiumAutomation/apks/org.wikipedia.apk");
+        cap.setCapability("app", "/Users/pavelrybakov/Docs/GitHub/maven-test/src/apks/org.wikipedia.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
     }
@@ -98,7 +98,7 @@ public class FirstTest {
                 "Cannot send wikipedia search",
                 5);
         waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='java']"),
                 "Cannot Find about Java",
                 10
         );
@@ -111,7 +111,7 @@ public class FirstTest {
 
         String acticle_title = title_element.getAttribute("text");
 
-        Assert.assertEquals("Cannot get title", "", "article_title");
+        Assert.assertEquals("Cannot get title", "Java (programming language)", acticle_title);
     }
     private WebElement waitForElement(By by, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);

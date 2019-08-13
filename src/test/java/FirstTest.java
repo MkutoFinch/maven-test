@@ -182,6 +182,63 @@ public class FirstTest {
 
     }
 
+    @Test
+    public void saveFirstArticleToList() {
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
+                "Cannot find wikipedia search",
+                5
+        );
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text, 'Search…')]"),
+                "Java",
+                "Cannot send wikipedia search",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
+                "Cannot Find about Java",
+                10
+        );
+        waitForElement(
+                By.id("org.wikipedia:id/view_page_title_text"),
+                "Cannot find title",
+                15
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageView[@content-desc='More options']"),
+                "Cannot find 'More Options'",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text, 'Add to reading list')]"),
+                "Cannot add to reading List",
+                5
+        );
+        waitForElementAndClick(By.id("org.wikipedia:id/onboarding_button"),
+                "cannot press got it on onboarding",
+                5
+        );
+        waitForElementAndClear(By.id("org.wikipedia:id/text_input"),
+                "Cannot add to new list",
+                5
+        );
+        waitForElementAndSendKeys(By.id("org.wikipedia:id/text_input"),
+                "Learn Programming",
+                "Cannot sendKeys to folders name",
+                5
+        );
+        waitForElementAndClick(By.xpath("//*[@text='OK']"),
+                "Cannot press OK button",
+                10
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageView[@content-desc='Navigate up']"),
+                "Cannot find 'Navigate up'",
+                5
+        );
+    }
+
     private WebElement waitForElement(By by, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");

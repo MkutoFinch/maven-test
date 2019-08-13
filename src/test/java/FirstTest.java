@@ -21,9 +21,11 @@ public class FirstTest {
     public void setUp() throws Exception {
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability("platformName", "Android");
-        cap.setCapability("deviceName", "AndroidTestDevice");
-        //cap.setCapability("uid","192.168.56.103:5555");
-        cap.setCapability("platformVersion", "8.0");
+//        cap.setCapability("deviceName", "AndroidTestDevice");
+//        cap.setCapability("uid","192.168.56.103:5555");
+//        cap.setCapability("platformVersion", "8.0");
+        cap.setCapability("platformVersion", "q");
+
         cap.setCapability("automationName", "Appium");
         cap.setCapability("appPackage", "org.wikipedia");
         cap.setCapability("appActivity", ".main.MainActivity");
@@ -36,7 +38,6 @@ public class FirstTest {
     public void tearDown() {
         if (driver != null) driver.quit();
     }
-
     @Test
     public void searchTest(){
         waitForElementAndClick(
@@ -84,7 +85,6 @@ public class FirstTest {
                 5
         );
     }
-
     @Test
     public void testCompareArticleTitle(){
         waitForElementAndClick(
@@ -113,6 +113,8 @@ public class FirstTest {
 
         Assert.assertEquals("Cannot get title", "Java (programming language)", acticle_title);
     }
+
+
     private WebElement waitForElement(By by, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
@@ -134,11 +136,13 @@ public class FirstTest {
         element.sendKeys(value);
         return element;
     }
+
     private boolean waitForElementNotPresent(By by, String error_message, long timeoutInSeconds){
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(by));
     }
+
     private WebElement waitForElementAndClear( By by, String error_message, long timeoutInSeconds){
         WebElement element = waitForElement(by, error_message, timeoutInSeconds);
         element.clear();

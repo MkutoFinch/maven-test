@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1c64a0a-d6bb-4c1e-904d-9092e831f0c5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Stoloto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TestCases.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FirstTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/FirstTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/FirstTest.class" afterDir="false" />
     </list>
@@ -28,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+            <state relative-caret-position="285">
+              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -43,13 +45,63 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="31">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#setUp#0;class#FirstTest#0" />
+                <element signature="e#1323#1324#0" expanded="true" />
+                <element signature="e#1372#1373#0" expanded="true" />
+                <element signature="method#searchTest#0;class#FirstTest#0" />
+                <element signature="method#testCompareArticleTitle#0;class#FirstTest#0" />
+                <element signature="method#waitForElement#0;class#FirstTest#0" />
+                <element signature="method#waitForElementAndClick#0;class#FirstTest#0" />
+                <element signature="method#waitForElementAndSendKeys#0;class#FirstTest#0" />
+                <element signature="method#waitForElementNotPresent#0;class#FirstTest#0" />
+                <element signature="method#waitForElementAndClear#0;class#FirstTest#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Stoloto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="75" column="39" lean-forward="true" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1449#1450#0" expanded="true" />
+                <element signature="e#1506#1507#0" expanded="true" />
+                <element signature="method#auth#0;class#FirstTest#0;class#Stoloto#0" />
+                <element signature="method#waitForElement#0;class#FirstTest#0;class#Stoloto#0" />
+                <element signature="method#waitForElementAndClick#0;class#FirstTest#0;class#Stoloto#0" />
+                <element signature="method#waitForElementAndSendKeys#0;class#FirstTest#0;class#Stoloto#0" />
+                <element signature="method#waitForElementNotPresent#0;class#FirstTest#0;class#Stoloto#0" />
+                <element signature="method#waitForElementAndClear#0;class#FirstTest#0;class#Stoloto#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/TestCases.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1463#1464#0" expanded="true" />
+                <element signature="e#1520#1521#0" expanded="true" />
+                <element signature="method#waitForElement#0;class#TestCases#0" />
+                <element signature="e#1923#1924#0" expanded="true" />
+                <element signature="method#waitForElementAndClick#0;class#TestCases#0" />
+                <element signature="method#waitForElementAndSendKeys#0;class#TestCases#0" />
+                <element signature="method#waitForElementNotPresent#0;class#TestCases#0" />
+                <element signature="method#waitForElementAndClear#0;class#TestCases#0" />
               </folding>
             </state>
           </provider>
@@ -66,6 +118,13 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -74,17 +133,14 @@
       <list>
         <option value="$PROJECT_DIR$/src/test/java/test.feature" />
         <option value="$PROJECT_DIR$/maven-test.iml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/FirstTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/Stoloto.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestCases.java" />
       </list>
     </option>
   </component>
   <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="/usr/local/Cellar/maven/3.6.1/libexec" />
-      </MavenGeneralSettings>
-    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="importAutomatically" value="true" />
@@ -118,7 +174,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -130,12 +185,31 @@
             <path>
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
               <item name="maven-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven-test" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="maven-test" type="462c0819:PsiDirectoryNode" />
               <item name="Tools" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -163,7 +237,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FirstTest.testCompareArticleTitle">
+  <component name="RunManager" selected="JUnit.Stoloto.auth">
     <configuration name="FirstTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="maven-test" />
       <option name="PACKAGE_NAME" value="" />
@@ -206,8 +280,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Stoloto.auth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="appium-test-project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Stoloto" />
+      <option name="METHOD_NAME" value="auth" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Stoloto.auth" />
         <item itemvalue="JUnit.FirstTest.testCompareArticleTitle" />
         <item itemvalue="JUnit.FirstTest.searchTest" />
         <item itemvalue="JUnit.FirstTest.testCancelSearch" />
@@ -232,35 +317,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FirstTest_searchTest - 2019.07.26 at 22h 20m 59s.xml">
-      <configuration name="FirstTest.searchTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstTest_searchTest - 2019.07.26 at 23h 17m 38s.xml">
-      <configuration name="FirstTest.searchTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstTest_searchTest - 2019.07.26 at 23h 20m 46s.xml">
-      <configuration name="FirstTest.searchTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstTest_testCompareArticleTitle - 2019.07.26 at 23h 25m 19s.xml">
+    <history-entry file="FirstTest_testCompareArticleTitle - 2019.08.12 at 15h 07m 48s.xml">
       <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testCompareArticleTitle - 2019.07.26 at 23h 26m 17s.xml">
+    <history-entry file="FirstTest_testCompareArticleTitle - 2019.08.12 at 15h 10m 17s.xml">
       <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testCompareArticleTitle - 2019.07.26 at 23h 32m 01s.xml">
+    <history-entry file="FirstTest_testCompareArticleTitle - 2019.08.12 at 15h 29m 05s.xml">
       <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testCompareArticleTitle - 2019.07.26 at 23h 32m 45s.xml">
+    <history-entry file="FirstTest_testCompareArticleTitle - 2019.08.12 at 15h 30m 20s.xml">
       <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testCompareArticleTitle - 2019.07.26 at 23h 33m 06s.xml">
+    <history-entry file="FirstTest_testCompareArticleTitle - 2019.08.12 at 15h 32m 17s.xml">
       <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testCompareArticleTitle - 2019.07.26 at 23h 34m 02s.xml">
-      <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
+    <history-entry file="Stoloto_auth - 2019.08.12 at 15h 46m 34s.xml">
+      <configuration name="Stoloto.auth" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FirstTest_testCompareArticleTitle - 2019.07.26 at 23h 36m 48s.xml">
-      <configuration name="FirstTest.testCompareArticleTitle" configurationId="JUnit" />
+    <history-entry file="Stoloto_auth - 2019.08.12 at 15h 47m 14s.xml">
+      <configuration name="Stoloto.auth" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Stoloto_auth - 2019.08.12 at 16h 18m 14s.xml">
+      <configuration name="Stoloto.auth" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Stoloto_auth - 2019.08.12 at 16h 18m 27s.xml">
+      <configuration name="Stoloto.auth" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Stoloto_auth - 2019.08.12 at 16h 18m 42s.xml">
+      <configuration name="Stoloto.auth" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -276,8 +361,8 @@
     <frame x="0" y="23" width="1440" height="797" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49503547" visible="true" weight="0.1795422" />
-      <window_info id="Structure" order="1" sideWeight="0.50496453" side_tool="true" visible="true" weight="0.1795422" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4903047" visible="true" weight="0.18383405" />
+      <window_info id="Structure" order="1" sideWeight="0.5096953" side_tool="true" visible="true" weight="0.18383405" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -285,7 +370,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32953367" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.48794326" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.48794326" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -299,7 +384,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.32904148" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.32904148" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -310,10 +395,10 @@
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar!/org/openqa/selenium/support/ui/WebDriverWait.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar!/org/openqa/selenium/support/ui/FluentWait.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar!/org/openqa/selenium/support/ui/ExpectedConditions.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/test/java/test.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -324,19 +409,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/test.feature">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        <state relative-caret-position="285">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="31">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#setUp#0;class#FirstTest#0" />
+            <element signature="e#1323#1324#0" expanded="true" />
+            <element signature="e#1372#1373#0" expanded="true" />
+            <element signature="method#searchTest#0;class#FirstTest#0" />
+            <element signature="method#testCompareArticleTitle#0;class#FirstTest#0" />
+            <element signature="method#waitForElement#0;class#FirstTest#0" />
+            <element signature="method#waitForElementAndClick#0;class#FirstTest#0" />
+            <element signature="method#waitForElementAndSendKeys#0;class#FirstTest#0" />
+            <element signature="method#waitForElementNotPresent#0;class#FirstTest#0" />
+            <element signature="method#waitForElementAndClear#0;class#FirstTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestCases.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1463#1464#0" expanded="true" />
+            <element signature="e#1520#1521#0" expanded="true" />
+            <element signature="method#waitForElement#0;class#TestCases#0" />
+            <element signature="e#1923#1924#0" expanded="true" />
+            <element signature="method#waitForElementAndClick#0;class#TestCases#0" />
+            <element signature="method#waitForElementAndSendKeys#0;class#TestCases#0" />
+            <element signature="method#waitForElementNotPresent#0;class#TestCases#0" />
+            <element signature="method#waitForElementAndClear#0;class#TestCases#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Stoloto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="75" column="39" lean-forward="true" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1449#1450#0" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+            <element signature="method#auth#0;class#FirstTest#0;class#Stoloto#0" />
+            <element signature="method#waitForElement#0;class#FirstTest#0;class#Stoloto#0" />
+            <element signature="method#waitForElementAndClick#0;class#FirstTest#0;class#Stoloto#0" />
+            <element signature="method#waitForElementAndSendKeys#0;class#FirstTest#0;class#Stoloto#0" />
+            <element signature="method#waitForElementNotPresent#0;class#FirstTest#0;class#Stoloto#0" />
+            <element signature="method#waitForElementAndClear#0;class#FirstTest#0;class#Stoloto#0" />
           </folding>
         </state>
       </provider>
@@ -398,7 +529,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

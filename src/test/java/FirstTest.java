@@ -26,7 +26,8 @@ public class FirstTest {
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability("platformName", "Android");
         cap.setCapability("deviceName", "AndroidTestDevice");
-        cap.setCapability("uid","192.168.56.103:5555");
+        //cap.setCapability("uid","192.168.56.103:5555");
+        cap.setCapability("uid", "emulator-5554");
         cap.setCapability("platformVersion", "8.0");
         cap.setCapability("automationName", "Appium");
         cap.setCapability("appPackage", "org.wikipedia");
@@ -233,9 +234,33 @@ public class FirstTest {
                 10
         );
         waitForElementAndClick(
-                By.xpath("//android.widget.ImageView[@content-desc='Navigate up']"),
+                By.xpath("//android.widget.ImageView[//android.widget.ImageButton[@content-desc=\"Navigate up\"]]"),
                 "Cannot find 'Navigate up'",
                 5
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.ImageView[//android.widget.ImageButton[@content-desc=\"My lists\"]]"),
+                "Cannot find 'Navigate up'",
+                5
+        );
+        waitForElementAndClick(
+                By.xpath("//android.widget.FrameLayout[//android.widget.ImageButton[@content-desc=\"Learn Programming\"]]"),
+                "Cannot find 'my list'",
+                5
+        );
+        waitForElementAndClick(By.xpath("//*[@text='Java (programming language)']"),
+                "cannot open my list",
+                5
+        );
+        swipeElementToLeft(By.xpath("//*[@text='Java (programming language)']"),
+                "Cannot delete item from list"
+
+        );
+        waitForElementNotPresent(
+                By.xpath("//*[@text='Java (programming language)']"),
+                "can find an element",
+                5
+
         );
     }
 
@@ -279,7 +304,12 @@ public class FirstTest {
         int x = size.width/2;
         int start_y = (int) (size.height * 0.8);
         int end_y = (int) (size.height * 0.2);
-        action.press(x, start_y).waitAction(timeOfswipe).moveTo(x, end_y).release().perform();
+        action.
+                press(x, start_y).
+                waitAction(timeOfswipe).
+                moveTo(x, end_y).
+                release().
+                perform();
     }
 
     protected void swipeUpQuick(){
@@ -297,6 +327,21 @@ public class FirstTest {
             swipeUpQuick();
             ++already_swiped;
         }
+    }
+
+    protected void swipeElementToLeft(By by, String error_message) {
+        WebElement element = waitForElement(by, "", 15);
+        int left_x = element.getLocation().getX();
+        int right_x = left_x + element.getSize().getWidth();
+        int upper_y = element.getLocation().getY();
+        int low_y = upper_y + element.getSize().getHeight();
+        int middle_y = (upper_y + low_y) / 2;
+        TouchAction action = new TouchAction(driver);
+        action.press(right_x, middle_y).
+                waitAction(150).
+                moveTo(left_x, middle_y).
+                release().
+                perform();
     }
 
 

@@ -224,8 +224,9 @@ public class FirstTest {
                 "Cannot add to new list",
                 5
         );
+        String name_of_folder = "Learn Programming";
         waitForElementAndSendKeys(By.id("org.wikipedia:id/text_input"),
-                "Learn Programming",
+                name_of_folder,
                 "Cannot sendKeys to folders name",
                 5
         );
@@ -234,17 +235,17 @@ public class FirstTest {
                 10
         );
         waitForElementAndClick(
-                By.xpath("//android.widget.ImageView[//android.widget.ImageButton[@content-desc=\"Navigate up\"]]"),
+                By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]]"),
                 "Cannot find 'Navigate up'",
                 5
         );
         waitForElementAndClick(
-                By.xpath("//android.widget.ImageView[//android.widget.ImageButton[@content-desc=\"My lists\"]]"),
+                By.xpath("//android.widget.ImageButton[@content-desc=\"My lists\"]]"),
                 "Cannot find 'Navigate up'",
                 5
         );
         waitForElementAndClick(
-                By.xpath("//android.widget.FrameLayout[//android.widget.ImageButton[@content-desc=\"Learn Programming\"]]"),
+                By.xpath("//android.widget.FrameLayout[//android.widget.ImageButton[@content-desc=\"" + name_of_folder + "\"]]"),
                 "Cannot find 'my list'",
                 5
         );
@@ -338,7 +339,7 @@ public class FirstTest {
         int middle_y = (upper_y + low_y) / 2;
         TouchAction action = new TouchAction(driver);
         action.press(right_x, middle_y).
-                waitAction(150).
+                waitAction(300).
                 moveTo(left_x, middle_y).
                 release().
                 perform();

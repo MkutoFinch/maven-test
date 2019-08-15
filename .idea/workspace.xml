@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e1c64a0a-d6bb-4c1e-904d-9092e831f0c5" name="Default Changelist" comment="Commit for ex2">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e1c64a0a-d6bb-4c1e-904d-9092e831f0c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FirstTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FirstTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/FirstTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/FirstTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Stoloto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Stoloto.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -46,13 +43,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/FirstTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="236" column="52" selection-start-line="236" selection-start-column="43" selection-end-line="236" selection-end-column="52" />
+            <state relative-caret-position="514">
+              <caret line="318" lean-forward="true" selection-start-line="318" selection-end-line="318" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#setUp#0;class#FirstTest#0" />
-                <element signature="e#1404#1405#0" expanded="true" />
-                <element signature="e#1453#1454#0" expanded="true" />
                 <element signature="method#searchTest#0;class#FirstTest#0" />
                 <element signature="method#testCancelSearch#0;class#FirstTest#0" />
                 <element signature="method#testCompareArticleTitle#0;class#FirstTest#0" />
@@ -291,16 +286,24 @@
       <option name="project" value="LOCAL" />
       <updated>1565621355181</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Commit for ex6">
+      <created>1565805643089</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1565805643089</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Commit for ex6">
+      <created>1565885528708</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565885528708</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FirstTest,searchTest_and_3_more - 2019.08.12 at 14h 58m 34s.xml">
-      <configuration name="FirstTest,searchTest and 3 more" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FirstTest,searchTest_and_3_more_(1) - 2019.08.12 at 15h 01m 00s.xml">
-      <configuration name="FirstTest,searchTest and 3 more (1)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="FirstTest_saveFirstArticleToList - 2019.08.13 at 12h 24m 24s.xml">
       <configuration name="FirstTest.saveFirstArticleToList" configurationId="JUnit" />
     </history-entry>
@@ -325,6 +328,12 @@
     <history-entry file="FirstTest_saveFirstArticleToList - 2019.08.14 at 20h 56m 29s.xml">
       <configuration name="FirstTest.saveFirstArticleToList" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="FirstTest_saveFirstArticleToList - 2019.08.15 at 13h 42m 40s.xml">
+      <configuration name="FirstTest.saveFirstArticleToList" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FirstTest_saveFirstArticleToList - 2019.08.15 at 13h 44m 27s.xml">
+      <configuration name="FirstTest.saveFirstArticleToList" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -337,10 +346,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1288" height="1057" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49528936" visible="true" weight="0.17977528" />
-      <window_info id="Structure" order="1" sideWeight="0.5047106" side_tool="true" visible="true" weight="0.17977528" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49535602" visible="true" weight="0.17977528" />
+      <window_info id="Structure" order="1" sideWeight="0.504644" side_tool="true" visible="true" weight="0.17977528" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -348,12 +356,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32953367" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23005182" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23005182" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32953367" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.33056995" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.33056995" />
       <window_info anchor="bottom" id="ConsoleMavenPlugin" order="8" weight="0.32953367" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32953367" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -370,8 +378,13 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Commit for ex2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit for ex2" />
+    <MESSAGE value="Commit for ex6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit for ex6" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-support/3.141.59/selenium-support-3.141.59-sources.jar!/org/openqa/selenium/support/ui/WebDriverWait.java">
@@ -443,13 +456,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/FirstTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="236" column="52" selection-start-line="236" selection-start-column="43" selection-end-line="236" selection-end-column="52" />
+        <state relative-caret-position="514">
+          <caret line="318" lean-forward="true" selection-start-line="318" selection-end-line="318" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setUp#0;class#FirstTest#0" />
-            <element signature="e#1404#1405#0" expanded="true" />
-            <element signature="e#1453#1454#0" expanded="true" />
             <element signature="method#searchTest#0;class#FirstTest#0" />
             <element signature="method#testCancelSearch#0;class#FirstTest#0" />
             <element signature="method#testCompareArticleTitle#0;class#FirstTest#0" />

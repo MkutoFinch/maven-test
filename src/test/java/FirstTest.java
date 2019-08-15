@@ -32,7 +32,7 @@ public class FirstTest {
         cap.setCapability("automationName", "Appium");
         cap.setCapability("appPackage", "org.wikipedia");
         cap.setCapability("appActivity", ".main.MainActivity");
-        cap.setCapability("app", "/Users/user1/Tests/JavaAppiumAutomation/apks/org.wikipedia.apk");
+        cap.setCapability("app", "/Library/Tests/Apks/org.wikipedia.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
     }

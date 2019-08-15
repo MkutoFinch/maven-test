@@ -185,11 +185,13 @@ public class FirstTest {
 
     @Test
     public void saveFirstArticleToList() {
+
         waitForElementAndClick(
                 By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
                 "Cannot find wikipedia search",
                 5
         );
+
         waitForElementAndSendKeys(
                 By.xpath("//*[contains(@text, 'Search…')]"),
                 "Java",
@@ -235,17 +237,17 @@ public class FirstTest {
                 10
         );
         waitForElementAndClick(
-                By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]]"),
+                By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]"),
                 "Cannot find 'Navigate up'",
                 5
         );
         waitForElementAndClick(
-                By.xpath("//android.widget.ImageButton[@content-desc=\"My lists\"]]"),
-                "Cannot find 'Navigate up'",
+                By.xpath("//android.widget.FrameLayout[@content-desc=\"My lists\"]"),
+                "Cannot find 'My Lists'",
                 5
         );
         waitForElementAndClick(
-                By.xpath("//android.widget.FrameLayout[//android.widget.ImageButton[@content-desc=\"" + name_of_folder + "\"]]"),
+                By.xpath("//android.widget.ImageButton[@content-desc=\"" + name_of_folder + "\"]"),
                 "Cannot find 'my list'",
                 5
         );
@@ -263,6 +265,24 @@ public class FirstTest {
                 5
 
         );
+    }
+
+    @Test
+    public void testAmountOfNotEmptySearch() {
+        String search_line = "Linkin park discography";
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
+                "Cannot find wikipedia search",
+                5
+        );
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text, 'Search…')]"),
+                search_line,
+                "Cannot send wikipedia search",
+                5
+        );
+        String search_result_locator = "//*[@resource_id='']/*[@resource_id=]"
     }
 
     private WebElement waitForElement(By by, String error_message, long timeoutInSeconds) {
@@ -343,6 +363,11 @@ public class FirstTest {
                 moveTo(left_x, middle_y).
                 release().
                 perform();
+    }
+
+    private int getAmountOfElements(By by) {
+        List elements = driver.findElements(by);
+        return elements.size();
     }
 
 

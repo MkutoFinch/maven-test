@@ -270,6 +270,7 @@ public class FirstTest {
     @Test
     public void testAmountOfNotEmptySearch() {
         String search_line = "Linkin park discography";
+
         waitForElementAndClick(
                 By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
                 "Cannot find wikipedia search",
@@ -282,7 +283,45 @@ public class FirstTest {
                 "Cannot send wikipedia search",
                 5
         );
-        String search_result_locator = "//*[@resource_id='']/*[@resource_id=]"
+        //String search_result_locator = "//*[@resource_id='org.wikipedia:id/page_list_item_container']/*[@resource_id='org.wikipedia:id/search_results_list']";
+//        waitForElementAndClick(
+//                By.id("org.wikipedia:id/page_list_item_container"),
+//                "Can't find locator"+ search_line,
+//                15
+//        );
+        int amount_of_search_results = getAmountOfElements(
+                By.id("org.wikipedia:id/page_list_item_container")
+        );
+        Assert.assertTrue(
+                "We found" + amount_of_search_results + "elements",
+                amount_of_search_results > 0
+        );
+    }
+
+    @Test
+    public void testAmountOfEmptySearch() {
+        String search_line = "zxcasdqwe";
+
+        waitForElementAndClick(
+                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
+                "Cannot find wikipedia search",
+                5
+        );
+
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text, 'Search…')]"),
+                search_line,
+                "Cannot send wikipedia search",
+                5
+        );
+        int amount_of_search_results = getAmountOfElements(
+                By.id("org.wikipedia:id/page_list_item_container")
+        );
+        Assert.assertTrue(
+                "We found" + amount_of_search_results + "elements",
+                amount_of_search_results > 0
+        );
+        String empty_results_label = "//*[text='No results found']";
     }
 
     private WebElement waitForElement(By by, String error_message, long timeoutInSeconds) {

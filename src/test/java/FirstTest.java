@@ -492,6 +492,32 @@ public class FirstTest {
 
     }
 
+    @Test
+    public void checkArticleTitlePresent() {
+
+
+        String article_name = "Java (programming language)";
+
+        waitForElementAndClick(
+                By.id("org.wikipedia:id/search_container"),
+                "can't find element by id",
+                10
+        );
+        waitForElementAndSendKeys(
+                By.xpath("//*[contains(@text, 'Search…')]"),
+                "Java",
+                "input element not found",
+                10
+        );
+        waitForElementAndClick(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='" + article_name + "']"),
+                "can't find element by id",
+                10
+        );
+        assertElement(
+                By.xpath("//*[@resource-id='org.wikipedia:id/view_page_title_text']")
+        );
+    }
     private WebElement waitForElement(By by, String error_message, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.withMessage(error_message + "\n");
@@ -583,6 +609,12 @@ public class FirstTest {
         return elements.size();
     }
 
-
+    private void assertElement(By by) {
+        try {
+            WebElement element = driver.findElement(by);
+        } catch (org.openqa.selenium.NoSuchElementException exception) {
+            throw new AssertionError("Element " + by.toString() + " not fount on the page");
+        }
+    }
 
 }

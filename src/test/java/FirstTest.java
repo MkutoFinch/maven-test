@@ -1,10 +1,11 @@
 import Lib.CoreTestCase;
+import Lib.ui.ArticlePageObject;
 import Lib.ui.MainPageObject;
+import Lib.ui.SearchPageObject;
 import io.appium.java_client.MobileElement;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
@@ -22,111 +23,49 @@ public class FirstTest extends CoreTestCase {
 
     @Test
     public void testSearch() {
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Cannot find wikipedia search",
-                5
-        );
-        MainPageObject.waitForElement(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                "Cannot send wikipedia search",
-                5
-        );
-        MainPageObject.waitForElement(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                "Cannot Find about Java",
-                15
-        );
+
+
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Java");
+        SearchPageObject.waitForSearchResult("Object-oriented programming language");
     }
     @Test
     public void testCancelSearch(){
-        MainPageObject.waitForElementAndClick(
-                By.id("org.wikipedia:id/search_container"),
-                "Cannot found search input",
-                10
-        );
-        MainPageObject.waitForElementAndSendKeys(
-                By.id("org.wikipedia:id/search_container"),
-                "Java",
-                "Cannot send keys",
-                5
-        );
-        MainPageObject.waitForElementAndClear(
-                By.id("org.wikipedia:id/search_src_text"),
-                "Cannot clear field",
-                5
-        );
-        MainPageObject.waitForElementAndClick(
-                By.id("org.wikipedia:id/search_close_btn"),
-                "Cannot find X on page",
-                5
-        );
-        MainPageObject.waitForElementNotPresent(
-                By.id("org.wikipedia:id/search_close_btn"),
-                "X still presented on this page",
-                5
-        );
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+
+        SearchPageObject.initSearchInput();
+        SearchPageObject.waitForCancelButtonToAppear();
+        SearchPageObject.clickCancelSearch();
+        SearchPageObject.waitForCancelButtonToDisppear();
+
     }
     @Test
     public void testCompareArticleTitle(){
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Cannot find wikipedia search",
-                5
-        );
-        MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                "Java",
-                "Cannot send wikipedia search",
-                5
-        );
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                "Cannot Find about Java",
-                10
-        );
-        WebElement title_element = MainPageObject.waitForElement(
-                By.id("org.wikipedia:id/view_page_title_text"),
-                "Cannot find title",
-                15
-        );
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Java");
+        SearchPageObject.clickByArticlWithSubString("Object-oriented programming language");
 
-        String acticle_title = title_element.getAttribute("text");
+        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+        String article_title = ArticlePageObject.getTitleElement();
 
         Assert.assertEquals(
                 "Cannot get title",
                 "Java (programming language)",
-                acticle_title);
+                article_title);
     }
     @Test
     public void testSwipeArticle(){
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Cannot find wikipedia search",
-                5
-        );
-        MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                "Java",
-                "Cannot send wikipedia search",
-                5
-        );
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
-                "Cannot Find about Java",
-                10
-        );
-        MainPageObject.waitForElement(
-                By.id("org.wikipedia:id/view_page_title_text"),
-                "Cannot find title",
-                15
-        );
-        MainPageObject.swipeUpQuick();
-        MainPageObject.swipeUpToFindElement(
-                By.id("org.wikipedia:id/page_external_link"),
-                "Cant find :open desktop version",
-                20
-        );
+
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Appium");
+        SearchPageObject.clickByArticlWithSubString("Appium");
+        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+        ArticlePageObject.waitForTitleElement();
+
+        ArticlePageObject.switeToFooter();
 
     }
     @Test
@@ -166,18 +105,10 @@ public class FirstTest extends CoreTestCase {
     @Test
     public void testSaveFirstArticleToList() {
 
-        MainPageObject.waitForElementAndClick(
-                By.xpath("//*[contains(@text, 'Search Wikipedia')]"),
-                "Cannot find wikipedia search",
-                5
-        );
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Appium");
 
-        MainPageObject.waitForElementAndSendKeys(
-                By.xpath("//*[contains(@text, 'Search…')]"),
-                "Java",
-                "Cannot send wikipedia search",
-                5
-        );
         MainPageObject.waitForElementAndClick(
                 By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"),
                 "Cannot Find about Java",

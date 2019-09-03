@@ -1,8 +1,6 @@
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -10,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.net.URL;
 
 public class TestCases {
@@ -21,7 +20,7 @@ public class TestCases {
         cap.setCapability("platformName", "Android");
         cap.setCapability("deviceName", "TestDevice");
         cap.setCapability("uid","HT6B70200690");
-        //cap.setCapability("platformVersion", "8.0");
+        cap.setCapability("platformVersion", "8.0");
         //cap.setCapability("platformVersion", "q");
         cap.setCapability("automationName", "Appium");
         cap.setCapability("appPackage", "ru.stoloto.mobile.debug");

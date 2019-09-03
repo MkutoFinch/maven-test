@@ -83,8 +83,8 @@ public class MainPageObject {
         }
     }
 
-    public String waitForElementAndGetAttribute(By by, String attribute, String err_msg, int timeout) {
-        WebElement element = waitForElement(by, err_msg, timeout);
+    public String waitForElementAndGetAttribute(By by, String attribute, String error_message, long timeoutInSeconds) {
+        WebElement element = waitForElement(by, error_message, timeoutInSeconds);
         return element.getAttribute(attribute);
     }
 
@@ -114,6 +114,14 @@ public class MainPageObject {
             WebElement element = driver.findElement(by);
         } catch (org.openqa.selenium.NoSuchElementException exception) {
             throw new AssertionError("Element " + by.toString() + " not fount on the page");
+        }
+    }
+
+    public void assertElementNotPresent(By by, String error_message) {
+        int amount_of_elements = getAmountOfElements(by);
+        if (amount_of_elements > 0) {
+            String default_message = "An element " + by.toString() + "supposed to be not present";
+            throw new AssertionError(default_message + " " + error_message);
         }
     }
 }

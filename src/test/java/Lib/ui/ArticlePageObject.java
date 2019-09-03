@@ -37,7 +37,7 @@ public class ArticlePageObject extends MainPageObject {
 
     }
 
-    public void addArticleToMyList(String name_of_folder) {
+    public void addFirstArticleToMyList(String name_of_folder) {
         this.waitForElementAndClick(
                 By.xpath(OPTIONS_BUTTON),
                 "Cannot find 'More Options'",
@@ -68,6 +68,25 @@ public class ArticlePageObject extends MainPageObject {
 
     }
 
+    public void addSecondArticleToMyList(String name_of_folder) {
+        this.waitForElementAndClick(
+                By.xpath(OPTIONS_BUTTON),
+                "Cannot find 'More Options'",
+                5
+        );
+        this.waitForElementAndClick(
+                By.xpath(ADD_TO_READING_LIST),
+                "Cannot add to reading List",
+                5
+        );
+
+        this.waitForElementAndClick(
+                By.xpath("//*[@text='" + name_of_folder + "']"),
+                "Cant find list with name " + name_of_folder,
+                10
+        );
+
+    }
     public void close_article() {
         this.waitForElementAndClick(
                 By.xpath(CLOSE_ARTICLE_BUTTON),

@@ -57,4 +57,16 @@ public class MyListsPageObject extends MainPageObject {
         this.waitForArticleToDisappearByTitle(article_title);
     }
 
+    public void checkTwoArticlesInList(String first_article, String second_article) {
+        this.waitForElement(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_title'][@text='" + first_article + "']"),
+                "can't find first article on the list",
+                20
+        );
+        this.waitForElement(
+                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_title' and @text='" + second_article + "']"),
+                "can't find second article on the list",
+                10
+        );
+    }
 }

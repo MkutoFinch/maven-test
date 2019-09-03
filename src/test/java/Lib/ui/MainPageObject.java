@@ -124,4 +124,5 @@ public class MainPageObject {
             throw new AssertionError(default_message + " " + error_message);
         }
     }
+
 }

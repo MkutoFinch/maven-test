@@ -16,45 +16,46 @@ public class SearchPageObject extends MainPageObject {
         super(driver);
     }
 
+    private int timeOut = 15;
     //Templates methods
     private static String getResultSearchElement(String substring) {
         return SEARCH_RESULT_BY_SUBSTRING_TPL.replace("{SUBSTRING}", substring);
     }
 
     public void initSearchInput() {
-        this.waitForElementAndClick(By.xpath(SEARCH_INIT_ELEMENT), "Cannot find and click search init element", 5);
-        this.waitForElement(By.xpath(SEARCH_INIT_ELEMENT), "Cannot find search input after clicking search init element", 5);
+        this.waitForElementAndClick(By.xpath(SEARCH_INIT_ELEMENT), "Cannot find and click search init element", timeOut);
+        this.waitForElement(By.xpath(SEARCH_INIT_ELEMENT), "Cannot find search input after clicking search init element", timeOut);
     }
 
     public void waitForCancelButtonToAppear() {
-        this.waitForElement(By.id(SEARCH_CANCEL_BUTTON), "cannot find cancel button", 5);
+        this.waitForElement(By.id(SEARCH_CANCEL_BUTTON), "cannot find cancel button", timeOut);
     }
 
     public void waitForCancelButtonToDisppear() {
-        this.waitForElementNotPresent(By.id(SEARCH_CANCEL_BUTTON), "Search cancel button is still present", 5);
+        this.waitForElementNotPresent(By.id(SEARCH_CANCEL_BUTTON), "Search cancel button is still present", timeOut);
     }
 
     public void clickCancelSearch() {
-        this.waitForElementAndClick(By.id(SEARCH_CANCEL_BUTTON), "Cannot click to cancel search", 5);
+        this.waitForElementAndClick(By.id(SEARCH_CANCEL_BUTTON), "Cannot click to cancel search", timeOut);
     }
 
     public void typeSearchLine(String search_line) {
-        this.waitForElementAndSendKeys(By.xpath(SEARCH_INPUT), search_line, "Cannot find and type into search element", 5);
+        this.waitForElementAndSendKeys(By.xpath(SEARCH_INPUT), search_line, "Cannot find and type into search element", timeOut);
     }
 
     public void waitForSearchResult(String substing) {
         String search_result_xpath = getResultSearchElement(substing);
-        this.waitForElement(By.xpath(search_result_xpath), "Cannot find search result with substring" + substing, 5);
+        this.waitForElement(By.xpath(search_result_xpath), "Cannot find search result with substring" + substing, timeOut);
     }
 
     public void clickByArticleWithSubString(String substing) {
         String search_result_xpath = getResultSearchElement(substing);
-        this.waitForElementAndClick(By.xpath(search_result_xpath), "Cannot find and click search result with substring" + substing, 5);
+        this.waitForElementAndClick(By.xpath(search_result_xpath), "Cannot find and click search result with substring" + substing, timeOut);
     }
 
     public void waitForArticleWithSubString(String substing) {
         String search_result_xpath = getResultSearchElement(substing);
-        this.waitForElement(By.xpath(search_result_xpath), "Cannot find and click search result with substring" + substing, 5);
+        this.waitForElement(By.xpath(search_result_xpath), "Cannot find and click search result with substring" + substing, timeOut);
     }
 
     public int getAmountOfFindArticles() {
@@ -69,7 +70,7 @@ public class SearchPageObject extends MainPageObject {
 
     public void waitForEmptyResultsLabel() {
 
-        this.waitForElement(By.xpath(SEARCH_EMPTY_RESULTS_ELEMENT), "Cannot find empty results for  ", 15);
+        this.waitForElement(By.xpath(SEARCH_EMPTY_RESULTS_ELEMENT), "Cannot find empty results for  ", timeOut);
     }
 
     public void assertThereIsNoResultOfSearch() {

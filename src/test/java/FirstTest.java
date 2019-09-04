@@ -146,7 +146,7 @@ public class FirstTest extends CoreTestCase {
     public void testPreservationOfTwoArticles() {
 
 
-        String name_of_folder = "Learning programming";
+        String name_of_folder = "Java";
         String search_line = "Java";
         String first_article = "Object-oriented programming language";
         String second_article = "Island of Indonesia";
@@ -168,16 +168,13 @@ public class FirstTest extends CoreTestCase {
         ArticlePageObject.waitForTitleElement();
         String second_name = ArticlePageObject.getTitleElement();
         ArticlePageObject.addSecondArticleToMyList(name_of_folder);
-
         ArticlePageObject.close_article();
-
         NavigationUI NavigationUI = new NavigationUI(driver);
         NavigationUI.clickMyList();
-
         MyListsPageObject MyListsPageObject = new MyListsPageObject(driver);
         MyListsPageObject.openFolderByName(name_of_folder);
         MyListsPageObject.checkTwoArticlesInList(first_article, second_article);
-        MyListsPageObject.swipeByArticleToDelete(first_name);
+        MyListsPageObject.swipeByArticleToDelete(first_article);
 
 
         //Перехожу по оставшейся статье и проверяю заголовок

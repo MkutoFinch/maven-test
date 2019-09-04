@@ -91,7 +91,7 @@ public class ArticlePageObject extends MainPageObject {
         this.waitForElementAndClick(
                 By.xpath(CLOSE_ARTICLE_BUTTON),
                 "Cannot find 'Navigate up'",
-                5
+                10
         );
     }
 }

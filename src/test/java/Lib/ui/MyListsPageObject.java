@@ -5,11 +5,20 @@ import org.openqa.selenium.By;
 
 public class MyListsPageObject extends MainPageObject {
 
-    private static final String FOLDER_BY_NAME_TPL = "//[@text='{FOLDER_NAME}']",
+    private static final String FOLDER_BY_NAME_TPL = "//*[@text='{FOLDER_NAME}']",
             ARTICLE_BY_TITLE_TPL = "//*[@text='{TITLE}']";
 
     public MyListsPageObject(AppiumDriver driver) {
         super(driver);
+    }
+
+    public static String decapitalize(String string) {
+        if (string == null || string.length() == 0) {
+            return string;
+        }
+        char[] c = string.toCharArray();
+        c[0] = Character.toLowerCase(c[0]);
+        return new String(c);
     }
 
     private static String getFolderXpathByName(String name_of_folder) {
@@ -57,14 +66,15 @@ public class MyListsPageObject extends MainPageObject {
         this.waitForArticleToDisappearByTitle(article_title);
     }
 
+
     public void checkTwoArticlesInList(String first_article, String second_article) {
         this.waitForElement(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_title'][@text='" + first_article + "']"),
+                By.xpath("//*[@text='" + decapitalize(first_article) + "']"),
                 "can't find first article on the list",
                 20
         );
         this.waitForElement(
-                By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_title' and @text='" + second_article + "']"),
+                By.xpath("//*[@text='" + decapitalize(second_article) + "']"),
                 "can't find second article on the list",
                 10
         );

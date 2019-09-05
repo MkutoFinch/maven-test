@@ -1,0 +1,27 @@
+//test to ex4
+
+@Test
+    public void testSearchElementsInArray() {
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine("Appium");
+        MainPageObject.waitForElement(
+                By.xpath("//*[contains(@text, 'ava')]"),
+                "Cannot send wikipedia search",
+                5
+        );
+
+        List<MobileElement> listElements = driver.findElements(By.id("org.wikipedia:id/fragment_feed_feed"));
+
+        for (MobileElement element : listElements) {
+            if (element.getText().equalsIgnoreCase("")) {
+                // do some validation //
+                assertEquals(
+                        "Cannot get title",
+                        "ava",
+                        listElements);
+            }
+            System.out.println(listElements);
+        }
+
+    }

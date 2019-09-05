@@ -51,14 +51,14 @@ public class MyListsPageObject extends MainPageObject {
     public void waitForArticleToAppearByTitle(String article_title) {
 
         String article_xpath = getSavedArticleXpathByTitle(article_title);
-        this.waitForElementNotPresent(By.xpath(article_xpath),
+        this.waitForElement(By.xpath(article_xpath),
                 "saved article still present " + article_title, 15);
 
     }
 
     public void swipeByArticleToDelete(String article_title) {
         this.waitForArticleToAppearByTitle(article_title);
-        String article_xpath = getFolderXpathByName(article_title);
+        String article_xpath = getSavedArticleXpathByTitle(article_title);
         this.swipeElementToLeft(By.xpath(article_xpath),
                 "Cannot delete item from list"
 

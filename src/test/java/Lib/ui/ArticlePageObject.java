@@ -4,6 +4,8 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import static org.junit.Assert.assertEquals;
+
 public class ArticlePageObject extends MainPageObject {
 
     private static final String TITLE = "org.wikipedia:id/view_page_title_text",
@@ -13,7 +15,8 @@ public class ArticlePageObject extends MainPageObject {
             ONBOARDING_CANCEL_BUTTON = "org.wikipedia:id/onboarding_button",
             MY_LIST_NAME_INPUT = "org.wikipedia:id/text_input",
             OK_BUTTON = "//*[@text='OK']",
-            CLOSE_ARTICLE_BUTTON = "//android.widget.ImageButton[@content-desc='Navigate up']";
+            CLOSE_ARTICLE_BUTTON = "//android.widget.ImageButton[@content-desc='Navigate up']",
+            ARTICLE_XPATH = "//*[@resource-id='org.wikipedia:id/page_list_item_title' and @text='Java']";
 
     public ArticlePageObject(AppiumDriver driver) {
         super(driver);
@@ -87,11 +90,44 @@ public class ArticlePageObject extends MainPageObject {
         );
 
     }
-    public void close_article() {
+
+    public void closeArticle() {
         this.waitForElementAndClick(
                 By.xpath(CLOSE_ARTICLE_BUTTON),
                 "Cannot find 'Navigate up'",
                 10
+        );
+    }
+
+    public void checkRemainingArticle() {
+        String link_article_title = this.waitForElementAndGetAttribute(
+                By.xpath(ARTICLE_XPATH),
+                "text",
+                "cant find article to get its text attribute",
+                10
+        );
+        this.waitForElementAndClick(
+                By.xpath(ARTICLE_XPATH),
+                "can't find second article on the list",
+                10
+        );
+        String article_title = this.waitForElementAndGetAttribute(
+                By.id(TITLE),
+                "text",
+                "cant find article to get its text attribute",
+                20
+        );
+        assertEquals(
+                "Article title does not match title of the link on the list",
+                link_article_title,
+                article_title
+        );
+
+    }
+
+    public void assertion(String search_line) {
+        this.assertElement(
+                By.id(search_line)
         );
     }
 }

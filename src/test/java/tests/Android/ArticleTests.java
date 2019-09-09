@@ -1,4 +1,4 @@
-package tests;
+package tests.Android;
 
 import Lib.CoreTestCase;
 import Lib.ui.ArticlePageObject;
@@ -34,6 +34,21 @@ public class ArticleTests extends CoreTestCase {
 
         ArticlePageObject.swipeToFooter();
 
+    }
+
+    @Test
+    public void testCheckArticleTitlePresent() {
+
+
+        String search_line = "Java";
+
+        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject.initSearchInput();
+        SearchPageObject.typeSearchLine(search_line);
+
+        SearchPageObject.waitForArticleWithSubString(search_line);
+        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+        ArticlePageObject.assertion(search_line);
     }
 
 

@@ -1,31 +1,47 @@
-package tests.Android;
+package tests;
 
 import Lib.CoreTestCase;
+import Lib.Platform;
 import Lib.ui.ArticlePageObject;
 import Lib.ui.MyListsPageObject;
 import Lib.ui.NavigationUI;
 import Lib.ui.SearchPageObject;
+import Lib.ui.factories.ArticlePageObjectFactory;
+import Lib.ui.factories.MyListsPageObjectFactory;
+import Lib.ui.factories.NavigationUIFactory;
+import Lib.ui.factories.SearchPageObjectFactory;
 import org.junit.Test;
 
 public class MyListsTests extends CoreTestCase {
+    private static String NAME_OF_FOLDER = "Learning programming";
     @Test
     public void testSaveFirstArticleToList() {
         String article = "Object-oriented programming language";
-        String name_of_folder = "Learning programming";
+
         String search_line = "Java";
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine(search_line);
         SearchPageObject.clickByArticleWithSubString(article);
-        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+        ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
         ArticlePageObject.waitForTitleElement();
         String article_title = ArticlePageObject.getTitleElement();
-        ArticlePageObject.addFirstArticleToMyList(name_of_folder);
+
+        if (Platform.getInstance().isAndroid()) {
+            ArticlePageObject.addFirstArticleToMyList(NAME_OF_FOLDER);
+        } else {
+            ArticlePageObject.addArticleToMySaved();
+            ArticlePageObject.closeSyncSuggestionWindow();
+        }
+
         ArticlePageObject.closeArticle();
-        NavigationUI NavigationUI = new NavigationUI(driver);
+        NavigationUI NavigationUI = NavigationUIFactory.get(driver);
         NavigationUI.clickMyList();
-        MyListsPageObject MyListsPageObject = new MyListsPageObject(driver);
-        MyListsPageObject.openFolderByName(name_of_folder);
+        MyListsPageObject MyListsPageObject = MyListsPageObjectFactory.get(driver);
+        if (Platform.getInstance().isAndroid()) {
+            MyListsPageObject.openFolderByName(NAME_OF_FOLDER);
+        }
+
         MyListsPageObject.swipeByArticleToDelete(article_title);
 
 
@@ -34,33 +50,36 @@ public class MyListsTests extends CoreTestCase {
     @Test
     public void testPreservationOfTwoArticles() {
 
-
         String search_line = "Java";
         String first_article = "Object-oriented programming language";
         String second_article = "Island of Indonesia";
 
-        SearchPageObject SearchPageObject = new SearchPageObject(driver);
+        SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine(search_line);
         SearchPageObject.clickByArticleWithSubString(first_article);
-        ArticlePageObject ArticlePageObject = new ArticlePageObject(driver);
+        ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
         ArticlePageObject.waitForTitleElement();
         String first_name = ArticlePageObject.getTitleElement();
-        ArticlePageObject.addFirstArticleToMyList(search_line);
+        if (Platform.getInstance().isAndroid()) {
+            ArticlePageObject.addFirstArticleToMyList(NAME_OF_FOLDER);
+        } else {
+            ArticlePageObject.addArticleToMySaved();
+            ArticlePageObject.closeSyncSuggestionWindow();
+        }
         ArticlePageObject.closeArticle();
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine(search_line);
         SearchPageObject.clickByArticleWithSubString(second_article);
         ArticlePageObject.waitForTitleElement();
-        ArticlePageObject.addSecondArticleToMyList(search_line);
+        ArticlePageObject.addSecondArticleToMyList(NAME_OF_FOLDER);
         ArticlePageObject.closeArticle();
-        NavigationUI NavigationUI = new NavigationUI(driver);
+        NavigationUI NavigationUI = NavigationUIFactory.get(driver);
         NavigationUI.clickMyList();
-        MyListsPageObject MyListsPageObject = new MyListsPageObject(driver);
-        MyListsPageObject.openFolderByName(search_line);
+        MyListsPageObject MyListsPageObject = MyListsPageObjectFactory.get(driver);
+        MyListsPageObject.openFolderByName(NAME_OF_FOLDER);
         MyListsPageObject.checkTwoArticlesInList(first_article, second_article);
         MyListsPageObject.swipeByArticleToDelete(first_name);
         ArticlePageObject.checkRemainingArticle();
-
     }
 }

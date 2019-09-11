@@ -25,3 +25,22 @@
         }
 
     }
+
+
+
+
+    private DesiredCapabilities getCapabilitiesByPlatformEnv() throws Exception {
+            String platform = System.getenv("PLATFORM");
+            DesiredCapabilities cap = new DesiredCapabilities();
+
+            if (platform.equals(PLATFORM_ANDROID)) {
+
+
+            } else if (platform.equals(PLATFORM_IOS)) {
+
+            } else {
+                throw new Exception("Cannot het run platform from env variable. Platform value " + platform);
+
+            }
+            return cap;
+        }

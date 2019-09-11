@@ -2,15 +2,15 @@ package Lib.ui;
 
 import io.appium.java_client.AppiumDriver;
 
-public class SearchPageObject extends MainPageObject {
+abstract public class SearchPageObject extends MainPageObject {
 
-    private static final String
-            SEARCH_INIT_ELEMENT = "xpath://*[contains(@text, 'Search Wikipedia')]",
-            SEARCH_INPUT = "xpath://*[contains(@text, 'Search…')]",
-            SEARCH_CANCEL_BUTTON = "id:org.wikipedia:id/search_close_btn",
-            SEARCH_RESULT_BY_SUBSTRING_TPL = "xpath://*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='{SUBSTRING}']",
-            SEARCH_RESULT_ELEMENT = "xpath://*[@resource-id='org.wikipedia:id/search_results_list']/*[@resource-id='org.wikipedia:id/page_list_item_container']",
-            SEARCH_EMPTY_RESULTS_ELEMENT = "xpath://*[@text='No results found']";
+    protected static String
+            SEARCH_INIT_ELEMENT,
+            SEARCH_INPUT,
+            SEARCH_CANCEL_BUTTON,
+            SEARCH_RESULT_BY_SUBSTRING_TPL,
+            SEARCH_RESULT_ELEMENT,
+            SEARCH_EMPTY_RESULTS_ELEMENT;
     public SearchPageObject(AppiumDriver driver) {
         super(driver);
     }
@@ -44,17 +44,17 @@ public class SearchPageObject extends MainPageObject {
 
     public void waitForSearchResult(String substing) {
         String search_result_xpath = getResultSearchElement(substing);
-        this.waitForElement((search_result_xpath), "Cannot find search result with substring" + substing, timeOut);
+        this.waitForElement((search_result_xpath), "Cannot find search result with substring " + substing, timeOut);
     }
 
     public void clickByArticleWithSubString(String substing) {
         String search_result_xpath = getResultSearchElement(substing);
-        this.waitForElementAndClick((search_result_xpath), "Cannot find and click search result with substring" + substing, timeOut);
+        this.waitForElementAndClick((search_result_xpath), "Cannot find and click search result with substring " + substing, timeOut);
     }
 
     public void waitForArticleWithSubString(String substing) {
         String search_result_xpath = getResultSearchElement(substing);
-        this.waitForElement((search_result_xpath), "Cannot find and click search result with substring" + substing, timeOut);
+        this.waitForElement((search_result_xpath), "Cannot find search result with substring " + substing, timeOut);
     }
 
     public int getAmountOfFindArticles() {

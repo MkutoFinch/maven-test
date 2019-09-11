@@ -9,7 +9,8 @@ public class WelcomePageObject extends MainPageObject {
             STEP_ADD_OR_EDIT_PREF_LANG = "id:Add or edit preferred languages",
             STEP_LEARN_MORE_ABOUT_DATA_COLLECTED = "id:Learn more about data collected",
             STEP_GET_STARTED = "id:Get started",
-            STEP_NEXT = "id:Next";
+            STEP_NEXT = "id:Next",
+            STEP_SKIP = "id:Skip";
 
 
     public WelcomePageObject(AppiumDriver driver) {
@@ -18,7 +19,7 @@ public class WelcomePageObject extends MainPageObject {
 
 
     public void waitForLearnMoreLink() {
-        this.waitForElement(STEP_LEARN_MORE_LINK, "Cannot find mire about 'Learn more about Wikipedia'", 10);
+        this.waitForElement(STEP_LEARN_MORE_LINK, "Cannot find more about 'Learn more about Wikipedia'", 10);
     }
 
     public void clickNextButton() {
@@ -41,5 +42,8 @@ public class WelcomePageObject extends MainPageObject {
         this.waitForElementAndClick(STEP_GET_STARTED, "Cannot find about 'Get started'", 10);
     }
 
+    public void clickSkip() {
+        this.waitForElementAndClick(STEP_SKIP, "Cannot find skip button", 10);
+    }
 }
 

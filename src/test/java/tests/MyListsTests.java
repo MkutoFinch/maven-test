@@ -16,7 +16,7 @@ public class MyListsTests extends CoreTestCase {
     private static String NAME_OF_FOLDER = "Learning programming";
     @Test
     public void testSaveFirstArticleToList() {
-        String article = "Object-oriented programming language";
+        String article = "bject-oriented programming language";
 
         String search_line = "Java";
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);

@@ -9,7 +9,7 @@ public class SearchTests extends CoreTestCase {
 
     @Test
     public void testSearch() {
-        String substring = "Object-oriented programming language";
+        String substring = "bject-oriented programming language";
 
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
         SearchPageObject.initSearchInput();

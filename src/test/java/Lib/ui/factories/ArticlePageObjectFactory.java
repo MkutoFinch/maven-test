@@ -4,11 +4,11 @@ import Lib.Platform;
 import Lib.ui.Android.AndroidArticlePageObject;
 import Lib.ui.ArticlePageObject;
 import Lib.ui.iOS.IOSArticlePageObject;
-import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class ArticlePageObjectFactory {
 
-    public static ArticlePageObject get(AppiumDriver driver) {
+    public static ArticlePageObject get(RemoteWebDriver driver) {
         if (Platform.getInstance().isAndroid()) {
             return new AndroidArticlePageObject(driver);
         } else {

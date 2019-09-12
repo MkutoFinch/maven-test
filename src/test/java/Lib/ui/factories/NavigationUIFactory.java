@@ -4,10 +4,10 @@ import Lib.Platform;
 import Lib.ui.Android.AndroidNavigationUI;
 import Lib.ui.NavigationUI;
 import Lib.ui.iOS.IOSNavigationUI;
-import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class NavigationUIFactory {
-    public static NavigationUI get(AppiumDriver driver) {
+    public static NavigationUI get(RemoteWebDriver driver) {
         if (Platform.getInstance().isAndroid()) {
             return new AndroidNavigationUI(driver);
         } else {

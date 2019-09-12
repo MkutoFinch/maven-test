@@ -1,8 +1,8 @@
 package Lib.ui;
 
 import Lib.Platform;
-import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import static org.junit.Assert.assertEquals;
 
@@ -19,7 +19,7 @@ abstract public class ArticlePageObject extends MainPageObject {
             ARTICLE_XPATH,
             CLOSE_ADD_TO_READING_LIST_IOS_TUTOR;
 
-    public ArticlePageObject(AppiumDriver driver) {
+    public ArticlePageObject(RemoteWebDriver driver) {
         super(driver);
     }
 

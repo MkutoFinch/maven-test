@@ -1,7 +1,7 @@
 package Lib.ui.iOS;
 
 import Lib.ui.ArticlePageObject;
-import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class IOSArticlePageObject extends ArticlePageObject {
     static {
@@ -12,7 +12,7 @@ public class IOSArticlePageObject extends ArticlePageObject {
         CLOSE_ADD_TO_READING_LIST_IOS_TUTOR = "id:places auth close";
     }
 
-    public IOSArticlePageObject(AppiumDriver driver) {
+    public IOSArticlePageObject(RemoteWebDriver driver) {
         super(driver);
     }
 }

@@ -1,7 +1,7 @@
 package Lib.ui.Android;
 
 import Lib.ui.ArticlePageObject;
-import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class AndroidArticlePageObject extends ArticlePageObject {
     static {
@@ -16,7 +16,7 @@ public class AndroidArticlePageObject extends ArticlePageObject {
         ARTICLE_XPATH = "xpath://*[@resource-id='org.wikipedia:id/page_list_item_title' and @text='Java']";
     }
 
-    public AndroidArticlePageObject(AppiumDriver driver) {
+    public AndroidArticlePageObject(RemoteWebDriver driver) {
         super(driver);
     }
 }

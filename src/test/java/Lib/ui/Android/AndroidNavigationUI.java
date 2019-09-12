@@ -1,7 +1,7 @@
 package Lib.ui.Android;
 
 import Lib.ui.NavigationUI;
-import io.appium.java_client.AppiumDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class AndroidNavigationUI extends NavigationUI {
 
@@ -9,7 +9,7 @@ public class AndroidNavigationUI extends NavigationUI {
         MY_LISTS_LINK = "xpath://android.widget.FrameLayout[@content-desc='My lists']";
     }
 
-    public AndroidNavigationUI(AppiumDriver driver) {
+    public AndroidNavigationUI(RemoteWebDriver driver) {
         super(driver);
     }
 

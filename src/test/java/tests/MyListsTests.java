@@ -47,46 +47,5 @@ public class MyListsTests extends CoreTestCase {
 
     }
 
-    @Test
-    public void testPreservationOfTwoArticles() {
 
-        String search_line = "Java";
-        String first_article = "JavaScript";
-        String second_title = "Java (programming language)";
-
-        SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
-        SearchPageObject.initSearchInput();
-        SearchPageObject.typeSearchLine(search_line);
-        SearchPageObject.clickByArticleWithSubString(first_article);
-        ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
-        ArticlePageObject.waitForTitleElement();
-        String first_name = ArticlePageObject.getTitleElement();
-        if (Platform.getInstance().isAndroid()) {
-            ArticlePageObject.addFirstArticleToMyList(NAME_OF_FOLDER);
-        } else {
-            ArticlePageObject.addArticleToMySaved();
-            ArticlePageObject.closeSyncSuggestionWindow();
-        }
-        ArticlePageObject.closeArticle();
-        SearchPageObject.initSearchInput();
-        SearchPageObject.typeSearchLine(search_line);
-        SearchPageObject.clickByArticleWithSubString(second_title);
-        ArticlePageObject.waitForTitleElement();
-        if (Platform.getInstance().isAndroid()) {
-            ArticlePageObject.addSecondArticleToMyList(NAME_OF_FOLDER);
-        } else {
-            ArticlePageObject.addArticleToMySaved();
-            ArticlePageObject.closeSyncSuggestionWindow();
-        }
-        ArticlePageObject.closeArticle();
-        NavigationUI NavigationUI = NavigationUIFactory.get(driver);
-        NavigationUI.clickMyList();
-        MyListsPageObject MyListsPageObject = MyListsPageObjectFactory.get(driver);
-        if (Platform.getInstance().isAndroid()) {
-            MyListsPageObject.openFolderByName(NAME_OF_FOLDER);
-        }
-        MyListsPageObject.checkTwoArticlesInList(first_article, second_title);
-        MyListsPageObject.swipeByArticleToDelete(first_name);
-        ArticlePageObject.checkRemainingArticle();
-    }
 }

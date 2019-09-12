@@ -73,6 +73,8 @@ public class MainPageObject {
                     waitAction(WaitOptions.waitOptions(Duration.ofMillis(timeOfswipe))).
                     release().
                     perform();
+        } else {
+            System.out.println("Method swipeUp does nothing to platform " + Platform.getInstance().getPlatformVar());
         }
     }
 
@@ -118,28 +120,33 @@ public class MainPageObject {
     }
 
     public void swipeElementToLeft(String locator, String error_message) {
+        if (driver instanceof AppiumDriver) {
 
 
-        TouchAction action = new TouchAction(driver);
-        WebElement element = waitForElement(locator, "Cannot swipe to the left", 15);
-        int left_x = element.getLocation().getX();
-        int right_x = left_x + element.getSize().getWidth();
-        int upper_y = element.getLocation().getY();
-        int low_y = upper_y + element.getSize().getHeight();
-        int middle_y = (upper_y + low_y) / 2;
+            TouchAction action = new TouchAction((AppiumDriver) driver);
+            WebElement element = waitForElement(locator, "Cannot swipe to the left", 15);
+            int left_x = element.getLocation().getX();
+            int right_x = left_x + element.getSize().getWidth();
+            int upper_y = element.getLocation().getY();
+            int low_y = upper_y + element.getSize().getHeight();
+            int middle_y = (upper_y + low_y) / 2;
 
-        action.press(PointOption.point(right_x, middle_y));
-        action.waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)));
+            action.press(PointOption.point(right_x, middle_y));
+            action.waitAction(WaitOptions.waitOptions(Duration.ofMillis(300)));
 
-        if (Platform.getInstance().isAndroid()) {
+            if (Platform.getInstance().isAndroid()) {
+                action.moveTo(PointOption.point(left_x, middle_y));
+            } else {
+                int offset_x = (-1 * element.getSize().getWidth());
+                action.moveTo(PointOption.point(offset_x, 0));
+            }
             action.moveTo(PointOption.point(left_x, middle_y));
+            action.release();
+            action.perform();
         } else {
-            int offset_x = (-1 * element.getSize().getWidth());
-            action.moveTo(PointOption.point(offset_x, 0));
+            System.out.println("Method swipeUp does nothing to platform " + Platform.getInstance().getPlatformVar());
+
         }
-        action.moveTo(PointOption.point(left_x, middle_y));
-        action.release();
-        action.perform();
     }
 
     public int getAmountOfElements(String locator) {
@@ -174,23 +181,30 @@ public class MainPageObject {
             return By.xpath(locator);
         } else if (by_type.equals("id")) {
             return By.id(locator);
+        } else if (by_type.equals("css")) {
+            return By.cssSelector(locator);
         } else {
             throw new IllegalArgumentException("Cannot get type of locator. Locator: " + locator_with_type);
         }
     }
 
     public void clickElementToTheRightUpperCorner(String locator, String error_message) {
-        WebElement element = this.waitForElement(locator + "//..", error_message);
-        int right_x = element.getLocation().getX();
-        int upper_y = element.getLocation().getY();
-        int lower_y = upper_y + element.getSize().getHeight();
-        int middle_y = (upper_y + lower_y / 2);
-        int width = element.getSize().getWidth();
+        if (driver instanceof AppiumDriver) {
+            WebElement element = this.waitForElement(locator + "//..", error_message);
+            int right_x = element.getLocation().getX();
+            int upper_y = element.getLocation().getY();
+            int lower_y = upper_y + element.getSize().getHeight();
+            int middle_y = (upper_y + lower_y / 2);
+            int width = element.getSize().getWidth();
 
-        int point_to_click_x = (right_x + width) - 3;
-        int point_to_click_y = (middle_y);
-        TouchAction action = new TouchAction(driver);
-        action.tap(PointOption.point(point_to_click_x, point_to_click_y)).perform();
+            int point_to_click_x = (right_x + width) - 3;
+            int point_to_click_y = (middle_y);
+            TouchAction action = new TouchAction((AppiumDriver) driver);
+            action.tap(PointOption.point(point_to_click_x, point_to_click_y)).perform();
+        } else {
+            System.out.println("Method swipeUp does nothing to platform " + Platform.getInstance().getPlatformVar());
+
+        }
     }
 
 }

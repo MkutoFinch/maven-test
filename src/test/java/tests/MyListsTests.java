@@ -51,8 +51,8 @@ public class MyListsTests extends CoreTestCase {
     public void testPreservationOfTwoArticles() {
 
         String search_line = "Java";
-        String first_article = "Object-oriented programming language";
-        String second_article = "Island of Indonesia";
+        String first_article = "JavaScript";
+        String second_title = "Java (programming language)";
 
         SearchPageObject SearchPageObject = SearchPageObjectFactory.get(driver);
         SearchPageObject.initSearchInput();
@@ -70,15 +70,22 @@ public class MyListsTests extends CoreTestCase {
         ArticlePageObject.closeArticle();
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchLine(search_line);
-        SearchPageObject.clickByArticleWithSubString(second_article);
+        SearchPageObject.clickByArticleWithSubString(second_title);
         ArticlePageObject.waitForTitleElement();
-        ArticlePageObject.addSecondArticleToMyList(NAME_OF_FOLDER);
+        if (Platform.getInstance().isAndroid()) {
+            ArticlePageObject.addSecondArticleToMyList(NAME_OF_FOLDER);
+        } else {
+            ArticlePageObject.addArticleToMySaved();
+            ArticlePageObject.closeSyncSuggestionWindow();
+        }
         ArticlePageObject.closeArticle();
         NavigationUI NavigationUI = NavigationUIFactory.get(driver);
         NavigationUI.clickMyList();
         MyListsPageObject MyListsPageObject = MyListsPageObjectFactory.get(driver);
-        MyListsPageObject.openFolderByName(NAME_OF_FOLDER);
-        MyListsPageObject.checkTwoArticlesInList(first_article, second_article);
+        if (Platform.getInstance().isAndroid()) {
+            MyListsPageObject.openFolderByName(NAME_OF_FOLDER);
+        }
+        MyListsPageObject.checkTwoArticlesInList(first_article, second_title);
         MyListsPageObject.swipeByArticleToDelete(first_name);
         ArticlePageObject.checkRemainingArticle();
     }

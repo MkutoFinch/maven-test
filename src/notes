@@ -44,3 +44,6 @@
             }
             return cap;
         }
+
+
+        export PLATFORM=iOS; mvn -Dtest=ArticleTests#testCompareArticleTitle test

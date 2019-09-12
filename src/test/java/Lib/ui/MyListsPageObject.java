@@ -31,6 +31,10 @@ abstract public class MyListsPageObject extends MainPageObject {
         return ARTICLE_BY_TITLE_TPL.replace("{TITLE}", article_title);
     }
 
+    private static String getSavedArticleXpathBySubstring(String article_substring) {
+
+        return ARTICLE_BY_TITLE_TPL.replace("{SUBSTRING}", article_substring);
+    }
     public void openFolderByName(String name_of_folder) {
 
         String folder_name_xpath = getFolderXpathByName(name_of_folder);
@@ -57,6 +61,13 @@ abstract public class MyListsPageObject extends MainPageObject {
 
     }
 
+    public void waitForArticleToAppearBySubstring(String substring) {
+
+        String article_xpath = getSavedArticleXpathByTitle(substring);
+        this.waitForElement((article_xpath),
+                "saved article still present " + substring, 15);
+
+    }
     public void swipeByArticleToDelete(String article_title) {
         this.waitForArticleToAppearByTitle(article_title);
         String article_xpath = getSavedArticleXpathByTitle(article_title);

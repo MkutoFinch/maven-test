@@ -1,16 +1,17 @@
 package Lib;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.URL;
 
 public class Platform {
-    public static final String PLATFORM_IOS = "iOS";
-    public static final String PLATFORM_ANDROID = "Android";
-    public static final String APPIUM_URL = "http://127.0.0.1:4723/wd/hub";
+    private static final String PLATFORM_IOS = "iOS";
+    private static final String PLATFORM_ANDROID = "Android";
+    private static final String PLATFORM_MOBILE_WEB = "mobile_web";
+    private static final String APPIUM_URL = "http://127.0.0.1:4723/wd/hub";
 
     private static Platform instance;
 
@@ -24,7 +25,7 @@ public class Platform {
         return instance;
     }
 
-    public AppiumDriver getDriver() throws Exception {
+    public RemoteWebDriver getDriver() throws Exception {
         URL URL = new URL(APPIUM_URL);
         if (this.isAndroid()) {
             return new AndroidDriver(URL, this.getAndroidDesiredCapabilities());
@@ -41,6 +42,10 @@ public class Platform {
 
     public boolean isIos() {
         return isPlatform(PLATFORM_IOS);
+    }
+
+    public boolean isMW() {
+        return isPlatform(PLATFORM_MOBILE_WEB);
     }
 
     private DesiredCapabilities getAndroidDesiredCapabilities() {
@@ -60,7 +65,7 @@ public class Platform {
         cap.setCapability("platformName", "iOS");
         cap.setCapability("deviceName", "iPhone SE");
         cap.setCapability("platformVersion", "11.3");
-        cap.setCapability("app", "/Users/user1/Downloads/Wikipedia.app");
+        cap.setCapability("app", "/Library/Tests/Apks/Wikipedia.app");
         return cap;
     }
 

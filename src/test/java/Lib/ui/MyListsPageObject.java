@@ -7,7 +7,8 @@ abstract public class MyListsPageObject extends MainPageObject {
 
     protected static String
             FOLDER_BY_NAME_TPL,
-            ARTICLE_BY_TITLE_TPL;
+            ARTICLE_BY_TITLE_TPL,
+            REMOVE_FROM_SAVED_BUTTON;
 
     public MyListsPageObject(RemoteWebDriver driver) {
         super(driver);
@@ -31,6 +32,10 @@ abstract public class MyListsPageObject extends MainPageObject {
         return ARTICLE_BY_TITLE_TPL.replace("{TITLE}", article_title);
     }
 
+    private static String getRemoveButtonByTitle(String article_title) {
+
+        return REMOVE_FROM_SAVED_BUTTON.replace("{TITLE}", article_title);
+    }
     private static String getSavedArticleXpathBySubstring(String article_substring) {
 
         return ARTICLE_BY_TITLE_TPL.replace("{SUBSTRING}", article_substring);
@@ -71,12 +76,19 @@ abstract public class MyListsPageObject extends MainPageObject {
     public void swipeByArticleToDelete(String article_title) {
         this.waitForArticleToAppearByTitle(article_title);
         String article_xpath = getSavedArticleXpathByTitle(article_title);
-        this.swipeElementToLeft((article_xpath),
-                "Cannot delete item from list"
+        if (Platform.getInstance().isAndroid() || Platform.getInstance().isIos()) {
+            this.swipeElementToLeft((article_xpath),
+                    "Cannot delete item from list");
+        } else {
+            String remove_locator = getRemoveButtonByTitle(article_title);
+            this.waitForElementAndClick(remove_locator, "Cannot click to butoon to remove article from saved", 10);
+        }
 
-        );
         if (Platform.getInstance().isIos()) {
             this.clickElementToTheRightUpperCorner(article_xpath, "cannot find save article ");
+        }
+        if (Platform.getInstance().isMW()) {
+            driver.navigate().refresh();
         }
         this.waitForArticleToDisappearByTitle(article_title);
     }

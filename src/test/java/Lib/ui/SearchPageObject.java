@@ -28,7 +28,7 @@ abstract public class SearchPageObject extends MainPageObject {
     }
 
     public void waitForCancelButtonToAppear() {
-        this.waitForElement(SEARCH_CANCEL_BUTTON, "cannot find cancel button", timeOut);
+        this.waitForElement(SEARCH_CANCEL_BUTTON, "cannot find cancel button", 4);
     }
 
     public void waitForCancelButtonToDisppear() {
@@ -36,7 +36,7 @@ abstract public class SearchPageObject extends MainPageObject {
     }
 
     public void clickCancelSearch() {
-        this.waitForElementAndClick(SEARCH_CANCEL_BUTTON, "Cannot click to cancel search", timeOut);
+        this.waitForElementAndClick(SEARCH_CANCEL_BUTTON, "Cannot click to cancel search", 4);
     }
 
     public void typeSearchLine(String search_line) {

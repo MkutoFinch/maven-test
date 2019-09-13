@@ -13,6 +13,7 @@ abstract public class ArticlePageObject extends MainPageObject {
             OPTIONS_BUTTON,
             ADD_TO_READING_LIST,
             ONBOARDING_CANCEL_BUTTON,
+            OPTIONS_REMOVE_FROM_MY_LIST_BUTTON,
             MY_LIST_NAME_INPUT,
             OK_BUTTON,
             CLOSE_ARTICLE_BUTTON,
@@ -31,8 +32,10 @@ abstract public class ArticlePageObject extends MainPageObject {
         WebElement title_element = waitForTitleElement();
         if (Platform.getInstance().isAndroid()) {
             return title_element.getAttribute("text");
-        } else {
+        } else if (Platform.getInstance().isIos()) {
             return title_element.getAttribute("name");
+        } else {
+            return title_element.getText();
         }
 
     }
@@ -40,12 +43,11 @@ abstract public class ArticlePageObject extends MainPageObject {
     public void swipeToFooter() {
         if (Platform.getInstance().isAndroid()) {
             this.swipeUpToFindElement(
-                    FOOTER_ELEMENT,
-                    "Cant find article by 20 swipes",
-                    40
-            );
-        } else {
+                    FOOTER_ELEMENT, "Cant find article by 20 swipes", 40);
+        } else if (Platform.getInstance().isIos()) {
             this.switeUpTillElementAppear(FOOTER_ELEMENT, "Cannot find the end of article", 40);
+        } else {
+            this.scrollWebPageTillElementIsNotVisible(FOOTER_ELEMENT, "Cannot find the end of article", 40);
         }
     }
 
@@ -101,11 +103,15 @@ abstract public class ArticlePageObject extends MainPageObject {
     }
 
     public void closeArticle() {
-        this.waitForElementAndClick(
-                (CLOSE_ARTICLE_BUTTON),
-                "Cannot find 'Navigate up'",
-                10
-        );
+        if ((Platform.getInstance().isIos()) || Platform.getInstance().isAndroid()) {
+            this.waitForElementAndClick(
+                    (CLOSE_ARTICLE_BUTTON),
+                    "Cannot find 'Navigate up'",
+                    10
+            );
+        } else
+            System.out.println("Method closeArticle do nothing to platform " + Platform.getInstance().getPlatformVar());
+
     }
 
     public void checkRemainingArticle() {
@@ -141,7 +147,17 @@ abstract public class ArticlePageObject extends MainPageObject {
     }
 
     public void addArticleToMySaved() {
-        this.waitForElementAndClick(ADD_TO_READING_LIST, "Cannot find option to add article to reading list", 10);
+        if (Platform.getInstance().isMW()) {
+            this.removeArticleFromSavedIfItAdded();
+        }
+        this.waitForElementAndClick(ADD_TO_READING_LIST, "Cannot find option to add article to reading list", 4);
+    }
+
+    public void removeArticleFromSavedIfItAdded() {
+        if (this.isElementPresent(OPTIONS_REMOVE_FROM_MY_LIST_BUTTON)) {
+            this.waitForElementAndClick(OPTIONS_REMOVE_FROM_MY_LIST_BUTTON, "Cannot find and click to remove from my list button", 10);
+            this.waitForElement(ADD_TO_READING_LIST, "Cannot find add to my list button ", 5);
+        }
     }
 
     public void closeSyncSuggestionWindow() {

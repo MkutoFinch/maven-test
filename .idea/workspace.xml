@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e1c64a0a-d6bb-4c1e-904d-9092e831f0c5" name="Default Changelist" comment="Commit for ex 17">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Lib/ui/AutorisationPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Lib/ui/ArticlePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Lib/ui/ArticlePageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Lib/ui/MainPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Lib/ui/MainPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Lib/ui/MyListsPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Lib/ui/MyListsPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Lib/ui/NavigationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Lib/ui/NavigationUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Lib/ui/SearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Lib/ui/SearchPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Lib/ui/mobile_web/MWArticlePageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Lib/ui/mobile_web/MWArticlePageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Lib/ui/mobile_web/MWMyListsPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Lib/ui/mobile_web/MWMyListsPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Lib/ui/mobile_web/MWNavigationUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Lib/ui/mobile_web/MWNavigationUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Lib/ui/mobile_web/MWSearchPageObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Lib/ui/mobile_web/MWSearchPageObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/ChangeAppConditionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/ChangeAppConditionTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/GetStartedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/GetStartedTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/MyListsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/MyListsTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="e1c64a0a-d6bb-4c1e-904d-9092e831f0c5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -379,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568286537259</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Commit for ex 17">
+      <created>1568338249823</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1568338249823</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView">
